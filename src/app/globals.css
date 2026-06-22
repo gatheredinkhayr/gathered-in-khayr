@@ -1,26 +1,140 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root,
+[data-theme="cream-noir"] {
+  --background: #FAF8F3;
+  --foreground: #1C1C1A;
+
+  --color-champagne: #FAF8F3;
+  --color-blush: #E7EBE0;
+  --color-antique-rose: #6F8159;
+  --color-dried-thyme: #1C1C1A;
+  --color-bisque: #ECE6D8;
+}
+
+[data-theme="pink-burgundy"] {
+  --background: #FBF1F2;
+  --foreground: #3D0F18;
+
+  --color-champagne: #FBF1F2;
+  --color-blush: #F3D7DC;
+  --color-antique-rose: #7A1F2B;
+  --color-dried-thyme: #3D0F18;
+  --color-bisque: #EFC3CB;
+}
+
+[data-theme="sky-burgundy"] {
+  --background: #F2F6FA;
+  --foreground: #250A0A;
+
+  --color-champagne: #F2F6FA;
+  --color-blush: #FBF6D9;
+  --color-antique-rose: #5C7B9C;
+  --color-dried-thyme: #250A0A;
+  --color-bisque: #A6BFD2;
+}
+
+[data-theme="navy-brown"] {
+  --background: #F5F1EA;
+  --foreground: #2A1B12;
+
+  --color-champagne: #F5F1EA;
+  --color-blush: #DCE3EC;
+  --color-antique-rose: #2F4A73;
+  --color-dried-thyme: #3B2A1E;
+  --color-bisque: #7C97B5;
+}
+
+[data-theme="chocolate-sakura"] {
+  --background: #FBEDEC;
+  --foreground: #443025;
+
+  --color-champagne: #FBEDEC;
+  --color-blush: #E8D6C9;
+  --color-antique-rose: #EC9C9D;
+  --color-dried-thyme: #443025;
+  --color-bisque: #C7A88F;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-champagne: var(--color-champagne);
+  --color-blush: var(--color-blush);
+  --color-antique-rose: var(--color-antique-rose);
+  --color-dried-thyme: var(--color-dried-thyme);
+  --color-bisque: var(--color-bisque);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Hero background swap: rose garden photo only shows for the pink & burgundy theme */
+.theme-rose-bg {
+  display: none;
+}
+
+[data-theme="pink-burgundy"] .theme-rose-bg {
+  display: block;
+}
+
+/* Hero background swap: floral photo only shows for the chocolate & sakura theme */
+.theme-sakura-bg {
+  display: none;
+}
+
+[data-theme="chocolate-sakura"] .theme-sakura-bg {
+  display: block;
+}
+
+/* Hero background swap: cloud photo only shows for the navy & brown theme */
+.theme-navy-brown-bg {
+  display: none;
+}
+
+[data-theme="navy-brown"] .theme-navy-brown-bg {
+  display: block;
+}
+
+/* Hero background swap: vintage maroon photo only shows for the sky blue & burgundy theme */
+.theme-sky-burgundy-bg {
+  display: none;
+}
+
+[data-theme="sky-burgundy"] .theme-sky-burgundy-bg {
+  display: block;
+}
+
+/* Hero background swap: black damask photo is the default for cream & noir sage (and shows whenever no other theme is active) */
+.theme-cream-noir-bg {
+  display: block;
+}
+
+[data-theme="pink-burgundy"] .theme-cream-noir-bg,
+[data-theme="chocolate-sakura"] .theme-cream-noir-bg,
+[data-theme="navy-brown"] .theme-cream-noir-bg,
+[data-theme="sky-burgundy"] .theme-cream-noir-bg {
+  display: none;
+}
+
+/* Featured topic icons: wax seal photos only show for the sky blue & burgundy theme; default line icons show otherwise */
+.topic-icon-default {
+  display: block;
+}
+
+.topic-icon-seal {
+  display: none;
+}
+
+[data-theme="sky-burgundy"] .topic-icon-default {
+  display: none;
+}
+
+[data-theme="sky-burgundy"] .topic-icon-seal {
+  display: flex;
 }
