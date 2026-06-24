@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { AnimatePresence, motion } from "framer-motion";
 import { topics } from "@/data/topics";
 import { resources } from "@/data/resources";
@@ -158,13 +158,9 @@ export default function Header() {
               scrolled ? "text-base" : "text-lg"
             }`}
           >
-            <Image
-              src="/logo.png"
-              alt="Gathered in Khayr"
-              width={32}
-              height={32}
-              className={`shrink-0 rounded-full object-cover transition-all duration-300 ${
-                scrolled ? "w-6 h-6" : "w-7 h-7"
+            <Logo
+              className={`shrink-0 text-antique-rose transition-all duration-300 ${
+                scrolled ? "w-5 h-5" : "w-6 h-6"
               }`}
             />
             Gathered in Khayr
