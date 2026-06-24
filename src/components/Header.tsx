@@ -60,7 +60,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-40 border-b transition-all duration-300 ${
         scrolled
-          ? "bg-champagne/90 backdrop-blur-sm border-bisque/60 py-2"
+          ? `bg-champagne/90 border-bisque/60 py-2 ${menuOpen ? "" : "backdrop-blur-sm"}`
           : "bg-champagne border-transparent py-4"
       }`}
     >
