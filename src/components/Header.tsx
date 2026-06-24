@@ -153,10 +153,17 @@ export default function Header() {
         <div className="absolute left-1/2 -translate-x-1/2 group flex flex-col items-center cursor-default">
           <Link
             href="/"
-            className={`font-serif tracking-widest uppercase text-dried-thyme transition-all duration-300 ${
+            className={`flex items-center gap-2 font-serif tracking-widest uppercase text-dried-thyme transition-all duration-300 ${
               scrolled ? "text-base" : "text-lg"
             }`}
           >
+            <span
+              className={`flex items-center justify-center shrink-0 rounded-full border border-dried-thyme font-serif normal-case tracking-normal transition-all duration-300 ${
+                scrolled ? "w-6 h-6 text-[10px]" : "w-7 h-7 text-xs"
+              }`}
+            >
+              GK
+            </span>
             Gathered in Khayr
           </Link>
           {prayerData && (
