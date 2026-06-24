@@ -12,7 +12,6 @@ const navRight = [
   { href: "/shop", label: "Shop" },
   { href: "/contact", label: "Let's talk" },
   { href: "/credits", label: "Credits" },
-  { href: "/donations", label: "Donations" },
 ];
 
 const mobileNav = [
@@ -227,10 +226,6 @@ export default function Header() {
               </div>
             </div>
           </div>
-
-          <Link href="/donations" className="hover:text-antique-rose transition-colors">
-            Donations
-          </Link>
         </nav>
 
         <button
