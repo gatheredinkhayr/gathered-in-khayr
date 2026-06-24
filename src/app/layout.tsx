@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import SplashScreen from "@/components/SplashScreen";
 import ScrollToTop from "@/components/ScrollToTop";
 import PaletteSwitcher from "@/components/PaletteSwitcher";
+import DuaBanner from "@/components/DuaBanner";
+import QuranPlayer from "@/components/QuranPlayer";
 
 const themeInitScript = `
 (function () {
@@ -67,10 +69,12 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <SplashScreen />
         <Header />
+        <DuaBanner />
         <main className="flex-1">{children}</main>
         <Footer />
         <ScrollToTop />
         <PaletteSwitcher />
+        <QuranPlayer />
       </body>
     </html>
   );

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Motif from "@/components/Motif";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
+import AboutBackground from "@/components/AboutBackground";
 
 export const metadata: Metadata = {
   title: "About | Gathered in Khayr",
@@ -10,43 +10,74 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className="relative">
+      <AboutBackground />
+
+      <div className="relative z-10">
       <PageHeader
         kicker="The story behind it"
         title="About"
-        description="A resource network for young Muslims, built on public health research and community insight."
+        description="A resource network for young Muslims"
       />
 
-      <section className="px-8 pb-20 max-w-2xl mx-auto">
-        <Reveal>
-          <Motif tone="bisque" pattern="star" className="h-64 mb-12" />
-        </Reveal>
-
+      <section className="px-8 pb-20 max-w-4xl mx-auto">
         <div className="flex flex-col gap-6 text-sm leading-7 text-foreground/80">
           <Reveal>
             <p>
-              Gathered in Khayr is a project aimed at creating a resource network for
-              young Muslims through TikTok and this website. With a background in
-              public health and data analytics, this project compiles and organizes
-              beneficial perspectives, resources, and references that address
-              contemporary issues through an Islamic lens — while remaining within the
-              boundaries of the Sharī&apos;ah.
+              Gathered in Khayr is a community initiative aimed at building a
+              resource network for young Muslims. It compiles and organizes
+              beneficial perspectives, resources, and references on contemporary
+              issues, examined through an Islamic lens and bound by the limits of
+              the Sharīʿah. It is offered as a supplement to one&apos;s pursuit of
+              knowledge — not a replacement for it nor a tool for teaching in its
+              own right.
+            </p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <p>
+              Each topic begins as a discussion prompt or video. Two or more
+              contributors, each bringing a different area of knowledge or lived
+              experience, share their reflections in whichever format suits them
+              best — a written document, a video, or something else entirely.
+              Those perspectives are then compiled into a summary, alongside
+              related resources, articles, and references.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <p>
-              Each topic begins as a discussion prompt. Five contributors, each with
-              different areas of knowledge and experience, share their thoughts in
-              whatever format is easiest for them — a written document, a video, or
-              something else entirely. Those perspectives are compiled into a summary,
-              alongside related resources, articles, and references.
+              Contributors may choose to remain anonymous or to be credited for
+              their contribution.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p>
+              In our Library tab, you&apos;ll find recommendations to take
+              from, which should only be done with the aid of a trusted advisor.
+              Our Shop tab features a multitude of modest brands and
+              Muslim-owned companies, gathered in one encompassing directory.
+              This platform will continue to grow — becoming more inclusive of
+              different ages and regions, and targeting more specific issues
+              with time, inshā&apos;Allāh.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <p>
-              Contributors can choose to remain anonymous or be credited for their
-              contribution.
+              Please note that this platform — and any other Gathered in Khayr
+              platform — is not a space for debate. Questions regarding fiqh,
+              ʿaqīdah, and so on will be referred back to a credible ustādh
+              rather than settled here. Any disruptive behavior will result in
+              being blocked.
             </p>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <div className="text-center pt-4">
+              <p dir="rtl" className="font-serif text-lg text-dried-thyme mb-1">
+                نسأل الله أن ينفع به وأن يتقبله منا
+              </p>
+              <p className="text-xs text-foreground/50">
+                We ask Allah to make this beneficial, and to accept it from us.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -71,6 +102,7 @@ export default function AboutPage() {
           </Link>
         </Reveal>
       </section>
+      </div>
     </div>
   );
 }

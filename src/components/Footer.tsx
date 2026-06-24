@@ -1,17 +1,35 @@
 import Link from "next/link";
+import EmailSignup from "@/components/EmailSignup";
 
 export default function Footer() {
   return (
     <footer className="bg-dried-thyme text-champagne">
       <div className="mx-auto max-w-6xl px-6 py-10 text-center">
-        <p className="font-serif text-base tracking-widest uppercase mb-6">
-          Let&apos;s be friends — follow us
-        </p>
+        <Link
+          href="/topics"
+          className="block font-serif text-base tracking-widest uppercase mb-6 hover:text-bisque transition-colors"
+        >
+          Hear what your peers are saying
+        </Link>
+
+        <svg
+          viewBox="0 0 40 70"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          className="h-16 w-10 mx-auto mb-1 text-champagne/80"
+        >
+          <path d="M20 4 V52" strokeLinecap="round" />
+          <path
+            d="M8 40 20 54 32 40"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
 
         <div className="flex justify-center mb-8">
-          {/* TODO: replace href with the real TikTok URL */}
           <a
-            href="https://www.tiktok.com/@gatheredinkhayr"
+            href="https://www.tiktok.com/@gathered.in.khayr"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow on TikTok"
@@ -24,12 +42,19 @@ export default function Footer() {
           </a>
         </div>
 
+        <p className="text-[10px] tracking-widest uppercase text-champagne/50 mb-3">
+          Know when a new topic drops
+        </p>
+        <div className="mb-8">
+          <EmailSignup />
+        </div>
+
         <div className="flex flex-wrap justify-center gap-6 text-[11px] tracking-widest uppercase mb-4">
           <Link href="/topics" className="hover:text-bisque transition-colors">
             Topics
           </Link>
           <Link href="/resources" className="hover:text-bisque transition-colors">
-            Resources
+            Library
           </Link>
           <Link href="/shop" className="hover:text-bisque transition-colors">
             Shop
@@ -39,6 +64,9 @@ export default function Footer() {
           </Link>
           <Link href="/contact" className="hover:text-bisque transition-colors">
             Contact
+          </Link>
+          <Link href="/credits" className="hover:text-bisque transition-colors">
+            Credits
           </Link>
         </div>
 

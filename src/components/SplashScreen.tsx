@@ -57,16 +57,22 @@ export default function SplashScreen() {
             className="max-w-3xl text-center mb-10"
           >
             <p className="text-base md:text-lg leading-8 text-champagne/85 mb-4">
-              The resources compiled here are based upon the authentic
-              Sunnah:
+              The resources compiled here are bound upon the authentic
+              Sunnah — the Qur&apos;an and the Sunnah, understood through
+              the lens of the righteous predecessors (al-Salaf al-Sālih).
+              These materials are drawn from existing literature, compiled
+              in service of the real issues young Muslims face and
+              struggle with today.
             </p>
             <p className="text-base md:text-lg leading-8 text-champagne/85 mb-6">
               This is not a space for debating fiqh, ʿaqīdah, methodology,
               or anything of that nature — it exists to compile sincere
-              perspectives and resources, not contest them. Inshā&apos;Allāh,
-              every source shared here will be properly vetted; if anything
-              is ever found to be inaccurate or in need of correction,
-              please reach out — we welcome it.
+              existing perspectives and resources, not contest them. All
+              matters of worship and guidance should still be carried out
+              with a trusted advisor or ustādh. Inshā&apos;Allāh, every
+              source shared here will be properly vetted; if anything is
+              ever found to be inaccurate or in need of correction, please
+              reach out — we welcome it.
             </p>
             <p dir="rtl" className="font-serif text-lg text-champagne">
               والله أعلم

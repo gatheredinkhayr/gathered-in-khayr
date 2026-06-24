@@ -122,19 +122,46 @@ body {
   display: none;
 }
 
-/* Featured topic icons: wax seal photos only show for the sky blue & burgundy theme; default line icons show otherwise */
+/* Featured topic icons: line icons (heart/brain/money) are currently unused as a fallback (cream & noir sage and chocolate & sakura both use numbers instead) */
 .topic-icon-default {
-  display: block;
-}
-
-.topic-icon-seal {
   display: none;
 }
 
-[data-theme="sky-burgundy"] .topic-icon-default {
+/* Featured topic icons: italic numbers are the look for cream & noir sage and chocolate & sakura (and before any theme is chosen) */
+.topic-icon-number {
+  display: flex;
+}
+
+[data-theme="navy-brown"] .topic-icon-number,
+[data-theme="sky-burgundy"] .topic-icon-number,
+[data-theme="pink-burgundy"] .topic-icon-number {
+  display: none;
+}
+
+/* Featured topic icons: decorative cloud photos only show for the navy & brown theme */
+.topic-icon-navy {
+  display: none;
+}
+
+[data-theme="navy-brown"] .topic-icon-navy {
+  display: flex;
+}
+
+/* Featured topic icons: wax seal photos only show for the sky blue & burgundy theme */
+.topic-icon-seal {
   display: none;
 }
 
 [data-theme="sky-burgundy"] .topic-icon-seal {
   display: flex;
 }
+
+/* Featured topic icons: decorative photos only show for the pink & burgundy theme */
+.topic-icon-pink {
+  display: none;
+}
+
+[data-theme="pink-burgundy"] .topic-icon-pink {
+  display: flex;
+}
+
