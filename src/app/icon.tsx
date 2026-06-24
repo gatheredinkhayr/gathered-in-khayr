@@ -11,54 +11,27 @@ export default function Icon() {
           width: "100%",
           height: "100%",
           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           background: "#FAF8F3",
-          position: "relative",
         }}
       >
         <div
           style={{
-            position: "absolute",
-            left: 10,
-            top: 16,
-            width: 26,
-            height: 26,
+            width: 54,
+            height: 54,
             borderRadius: "50%",
-            border: "3px solid #6F8159",
+            border: "2px solid #1C1C1A",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: "Georgia, serif",
+            fontSize: 26,
+            color: "#1C1C1A",
           }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 32,
-            top: 6,
-            width: 21,
-            height: 21,
-            borderRadius: "50%",
-            border: "3px solid #6F8159",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 21,
-            top: 31,
-            width: 23,
-            height: 23,
-            borderRadius: "50%",
-            background: "#6F8159",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 42,
-            top: 30,
-            width: 15,
-            height: 15,
-            borderRadius: "50%",
-            border: "3px solid #6F8159",
-          }}
-        />
+        >
+          GK
+        </div>
       </div>
     ),
     { ...size }
