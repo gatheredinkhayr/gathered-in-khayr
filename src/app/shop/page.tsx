@@ -12,13 +12,34 @@ const offsets = [0, 28, -16, 14, -24, 8];
 const fieldClass =
   "w-full bg-transparent border-0 border-b border-bisque px-0 py-3 text-sm focus:outline-none focus:border-antique-rose transition-colors";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrewegpq";
+
 export default function ShopPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: wire this up to actually send/store submissions (e.g. email, form service, or database) once one is chosen.
-    setSubmitted(true);
+    setSending(true);
+    setError(false);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.currentTarget),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -125,11 +146,18 @@ export default function ShopPage() {
                   <textarea id="brand-note" name="brand-note" rows={3} className={`${fieldClass} resize-none`} />
                 </div>
 
+                {error && (
+                  <p className="text-xs text-antique-rose">
+                    Something went wrong submitting this — please try again.
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="self-start text-xs tracking-widest uppercase bg-dried-thyme text-champagne px-6 py-3 rounded-full hover:bg-antique-rose transition-colors duration-300 mt-2"
+                  disabled={sending}
+                  className="self-start text-xs tracking-widest uppercase bg-dried-thyme text-champagne px-6 py-3 rounded-full hover:bg-antique-rose transition-colors duration-300 mt-2 disabled:opacity-50"
                 >
-                  Submit
+                  {sending ? "Sending..." : "Submit"}
                 </button>
               </form>
             </Reveal>

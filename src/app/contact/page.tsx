@@ -7,12 +7,34 @@ import Reveal from "@/components/Reveal";
 const fieldClass =
   "w-full bg-transparent border-0 border-b border-bisque px-0 py-3 text-sm focus:outline-none focus:border-antique-rose transition-colors";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgojoeaw";
+
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError(false);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.currentTarget),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -95,11 +117,18 @@ export default function ContactPage() {
                 I&apos;d like to remain anonymous if featured
               </label>
 
+              {error && (
+                <p className="text-xs text-antique-rose">
+                  Something went wrong sending your message — please try again.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="self-start text-xs tracking-widest uppercase bg-dried-thyme text-champagne px-6 py-3 rounded-full hover:bg-antique-rose transition-colors duration-300 mt-2"
+                disabled={sending}
+                className="self-start text-xs tracking-widest uppercase bg-dried-thyme text-champagne px-6 py-3 rounded-full hover:bg-antique-rose transition-colors duration-300 mt-2 disabled:opacity-50"
               >
-                Send message
+                {sending ? "Sending..." : "Send message"}
               </button>
             </form>
           </Reveal>
