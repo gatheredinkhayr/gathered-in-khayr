@@ -40,6 +40,15 @@ const bookRecommendations: Resource[] = [
   },
 ];
 
+const websiteRecommendations: Resource[] = [
+  {
+    title: "Sunnah.com",
+    category: "Websites",
+    description: "A searchable database of authentic hadith collections, with Arabic text and English translations.",
+    href: "https://sunnah.com",
+  },
+];
+
 const podcastRecommendations: Resource[] = [
   {
     title: "Podcast recommendation",
@@ -59,6 +68,7 @@ const topicResources: Resource[] = topics.map((topic) => ({
 
 export const resources: Resource[] = [
   ...bookRecommendations,
+  ...websiteRecommendations,
   ...podcastRecommendations,
   ...topicResources,
 ];
