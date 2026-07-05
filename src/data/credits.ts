@@ -6,6 +6,8 @@ export type Credit = {
 
 export const credits: Credit[] = [
   { name: "Ruqaiyah Nije", role: "Designated editor" },
-  // TODO: replace "#" with Jane's real TikTok link
-  { name: "Jane Doe", role: "Contributor", href: "#" },
+  { name: "Aminata bint Muhammad", role: "Contributor" },
+  { name: "Ahmed", role: "Contributor" },
+  { name: "Anonymous", role: "Contributor" },
+  { name: "Anonymous", role: "Contributor" },
 ];
