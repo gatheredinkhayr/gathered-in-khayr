@@ -6,12 +6,14 @@ export default function CreditBubble({
   name,
   role,
   href,
+  topics,
   delay = 0,
   offset = 0,
 }: {
   name: string;
   role: string;
   href?: string;
+  topics?: string[];
   delay?: number;
   offset?: number;
 }) {
@@ -19,6 +21,18 @@ export default function CreditBubble({
     <div className="flex flex-col items-center justify-center text-center px-7 py-6 min-w-[160px]">
       <p className="text-sm font-medium text-dried-thyme">{name}</p>
       <p className="text-xs text-foreground/60 mt-1">{role}</p>
+      {topics && topics.length > 0 && (
+        <div className="mt-3 flex flex-col gap-1">
+          {topics.map((t) => (
+            <span
+              key={t}
+              className="text-[10px] tracking-wide text-antique-rose/80 border border-antique-rose/20 rounded-full px-2.5 py-0.5"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 

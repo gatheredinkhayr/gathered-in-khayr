@@ -26,6 +26,7 @@ export default function CreditsPage() {
                 name={credit.name}
                 role={credit.role}
                 href={credit.href}
+                topics={credit.topics}
                 delay={i * 0.4}
                 offset={offsets[i % offsets.length]}
               />
