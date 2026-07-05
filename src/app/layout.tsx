@@ -15,6 +15,11 @@ const themeInitScript = `
     var theme = localStorage.getItem("gik-palette");
     if (theme) document.documentElement.setAttribute("data-theme", theme);
   } catch (e) {}
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js");
+    });
+  }
 })();
 `;
 
@@ -37,6 +42,12 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Gathered in Khayr",
+  },
   openGraph: {
     title,
     description,

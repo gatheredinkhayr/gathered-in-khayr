@@ -1,0 +1,24 @@
+{
+  "name": "Gathered in Khayr",
+  "short_name": "GiK",
+  "description": "A resource network for young Muslims — perspectives, resources, and references on contemporary issues through an Islamic lens.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F3",
+  "theme_color": "#FAF8F3",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
